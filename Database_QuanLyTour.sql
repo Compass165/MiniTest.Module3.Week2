@@ -8,16 +8,16 @@ CREATE TABLE City
         City_Name				VARCHAR(255)	NOT NULL
 	);
     
-    CREATE TABLE CategoryTour
+CREATE TABLE CategoryTour
 	(
-		CategoryTour_ID				INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        CategoryTour_Code			VARCHAR(255)	NOT NULL UNIQUE,
-        CategoryTour_Name			VARCHAR(255)	NOT NULL
+		CategoryTour_ID			INT				NOT NULL PRIMARY KEY,
+        CategoryTour_Code		VARCHAR(255)	NOT NULL UNIQUE,
+        CategoryTour_Name		VARCHAR(255)	NOT NULL
 	);
 
 CREATE TABLE Destination
 	(
-		Destination_ID			INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		Destination_ID			INT				NOT NULL PRIMARY KEY,
         Destination_Name		VARCHAR(255)	NOT NULL,
         Describes				VARCHAR(255),
         Cost					INT,
@@ -28,7 +28,7 @@ CREATE TABLE Destination
 
 CREATE TABLE Clients
 	(
-		Clients_ID				INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		Clients_ID				INT				NOT NULL PRIMARY KEY,
         Clients_Name			VARCHAR(255)	NOT NULL,
         IDNumber				VARCHAR(255)	NOT NULL,
         DateBirth				DATE,
@@ -39,7 +39,7 @@ CREATE TABLE Clients
     
 CREATE TABLE Tour
 	(
-		Tour_ID					INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		Tour_ID					INT				NOT NULL PRIMARY KEY,
         Tour_Code				VARCHAR(255)	NOT NULL UNIQUE,
         Category_ID				INT				NOT NULL,
         Destination_ID			INT				NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE Tour
 
     CREATE TABLE OrderTour
 	(
-		OrderTour_ID			INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		OrderTour_ID			INT				NOT NULL PRIMARY KEY,
         Tour_ID					INT				NOT NULL,
         Clients_ID				INT				NOT NULL,
         Status					VARCHAR(255),
